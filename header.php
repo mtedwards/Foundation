@@ -14,6 +14,7 @@
 	<title><?php bloginfo('name'); ?> | <?php is_home() ? bloginfo('description') : wp_title(''); ?></title>
   
 	<!-- Included CSS Files -->
+	
 	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>">
 	
 	<!-- IE Fix for HTML5 Tags -->
@@ -22,7 +23,7 @@
 	<![endif]-->
 	
 	<?php wp_head(); ?>
-
+	<?php // include (TEMPLATEPATH . '/javascripts/myscripts.php'); ?>
 </head>
 
 <body <?php body_class(); ?>>

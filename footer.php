@@ -25,7 +25,12 @@
 	<script src="<?php bloginfo('template_url'); ?>/javascripts/foundation.js"></script>
 	<script src="<?php bloginfo('template_url'); ?>/javascripts/orbit-1.3.0.js"></script>
 	<script src="<?php bloginfo('template_url'); ?>/javascripts/app.js"></script>
-
+	<script>
+		$(document).ready(function(){
+		    // Target your .container, .wrapper, .post, etc.
+		    $(".entry").fitVids();
+		});
+	</script>
 	<?php wp_footer(); ?>
 	
 </body>
