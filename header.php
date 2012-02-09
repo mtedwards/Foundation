@@ -18,6 +18,7 @@
 	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>">
 	<link rel="stylesheet/less" type="text/css" href="<?php bloginfo('template_directory'); ?>/stylesheets/main.less">
 	<script src="<?php bloginfo('template_directory'); ?>/javascripts/less-1.2.1.min.js" type="text/javascript">
+	<script src="<?php bloginfo('template_directory'); ?>/javascripts/prefixfree.min.js" type="text/javascript">
 	<!-- IE Fix for HTML5 Tags -->
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
