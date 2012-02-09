@@ -3,16 +3,15 @@
 /*******************************/
 /***** VARIABLES	************/
 
-@backgroundcolor: #333;
-@navbackground: #97f9e0;
+@backgroundcolor: #fff;
+@navbackground: #fff;
 
-
-@maintextcolor: #fff;
-@accentcolor: #f00;
-@linkcolor: #f00;
+@maintextcolor: #333;
+@accentcolor: #3CA9CC;
+@linkcolor: #D45220;
 
 @bodytextsize: 15px;
-@bodyfont: serif;
+@bodyfont: sans-serif;
 
 
 /*If you want to push the title and logo out of the header*/
@@ -41,10 +40,10 @@
 /*	--------------------------------------------------
 	:: Links
 	-------------------------------------------------- */
-	a { color:@linkcolor; text-decoration: none; line-height: inherit; }
+	a { color:@linkcolor; text-decoration: none; }
 	
 	/*CHOOSE TO DARKEN OR LIGHTEN*/
-	a:hover { color:darken(@linkcolor, 25%); }
+	a:hover, a:focus { color:darken(@accentcolor, 25%); }
 /*
 	a:focus (@linkcolor) when (lightness(@linkcolor) >= 50%) {color:darken(@linkcolor, 10%); outline: none; }
 	a:hover (@linkcolor) when (lightness(@linkcolor) < 50%) { color:lighten(@linkcolor, 10%); }
@@ -63,33 +62,33 @@
 /*	--------------------------------------------------
 	:: Tables
 	-------------------------------------------------- */
-	table { background: #fff; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; margin: 0 0 18px; border: 1px solid #ddd;  }
+	table { background: #fff; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; margin: 0 0 18px; border: 1px solid lighten(@maintextcolor, 75%);  }
 	
 
 /*	--------------------------------------------------
     :: Typography
 	-------------------------------------------------- */
-	h1, h2, h3, h4, h5, h6 { color: @accentcolor; font-weight: bold; line-height: 1.25em; }
+	h1, h1 a, h2, h2 a, h3, h3 a, h4, h5, h6 { color: @accentcolor; font-weight: bold; line-height: 1.25em; }
 
-	.subheader { color: #777; font-weight: 300; margin-bottom: 24px; }
+	.subheader { color:lighten(@accentcolor, 25%);  font-weight: 300; margin-bottom: 1.6em; }
 
-	p { line-height: 17px; margin: 0 0 18px; }
+	p { line-height: 1.4em; margin: 0 0 1.2em; }
 	p img { margin: 0; }
-	p.lead { font-size: 18px; font-size: 1.8rem; line-height: 24px;  }
+	p.lead { font-size: 1.3em; font-size: 1.8em; line-height: 1.6em;  }
 	
 	
-	h1 small, h2 small, h3 small, h4 small, h5 small { color: #777; }
+	h1 small, h2 small, h3 small, h4 small, h5 small { color: lighten(@maintextcolor, 25%); }
 	
 /*	Blockquotes  */
-	blockquote, blockquote p { line-height: 20px; color: #777; }
-	blockquote { margin: 0 0 18px; padding: 9px 20px 0 19px; border-left: 1px solid #ddd; }
+	blockquote, blockquote p { line-height: 20px; color: lighten(@maintextcolor, 25%); }
+	blockquote { margin: 0 0 18px; padding: 9px 20px 0 19px; border-left: 1px solid @accentcolor; }
 	blockquote cite { display: block; font-size: 12px; font-size: 1.2rem; color: @maintextcolor; }
 	blockquote cite:before { content: "\2014 \0020"; }
 	blockquote cite a, blockquote cite a:visited { color: @maintextcolor; }
 	
 	hr { border: solid ; border-width: 1px 0 0; clear: both; margin: 12px 0 18px; height: 0; }
 	
-	abbr, acronym { text-transform: uppercase; font-size: 90%; color: #222; border-bottom: 1px solid #ddd; cursor: help; }
+	abbr, acronym { text-transform: uppercase; font-size: 90%; color: lighten(@maintextcolor, 25%); border-bottom: 1px solid @maintextcolor; }
 	abbr { text-transform: none; }
 
 /*	--------------------------------------------------
@@ -121,11 +120,11 @@
 /*    --------------------------------------------------
     Tabs
     -------------------------------------------------- */
-    dl.tabs { display: block; margin: 0 0 20px 0; padding: 0; height: 30px; border-bottom: solid 1px #ddd; }
+    dl.tabs { display: block; margin: 0 0 20px 0; padding: 0; height: 30px; border-bottom: solid 1px lighten(@maintextcolor, 75%); }
     dl.tabs dt { display: block; width: auto; height: 30px; padding: 0 9px 0 20px; line-height: 30px; float: left; color: #999; font-size: 11px; text-transform: uppercase; cursor: default; }
     dl.tabs dt:first-child { padding: 0 9px 0 0; }
     dl.tabs dd { display: block; width: auto; height: 30px; padding: 0; float: left; }
-    dl.tabs dd a { display: block; width: auto; height: 29px; padding: 0 9px; line-height: 30px; border: solid 1px #ddd; margin: 0 -1px 0 0; color: @maintextcolor; background: #eee; }
+    dl.tabs dd a { display: block; width: auto; height: 29px; padding: 0 9px; line-height: 30px; border: solid 1px lighten(@maintextcolor, 75%); margin: 0 -1px 0 0; color: @maintextcolor; background: #eee; }
     dl.tabs dd a.active { background: #fff; border-width: 1px 1px 0 1px; height: 30px; }
 
 		.nice.tabs { border-bottom: solid 1px #eee; margin: 0 0 30px 0; height:43px; }
@@ -152,7 +151,7 @@
     dl.nice.contained.tabs dd a { padding: 7px 18px 9px; }
 
     ul.contained.tabs-content { padding: 0; }
-	ul.contained.tabs-content>li { padding: 20px; border: solid 0 #ddd; border-width: 0 1px 1px 1px; }
+	ul.contained.tabs-content>li { padding: 20px; border: solid 0 lighten(@maintextcolor, 75%); border-width: 0 1px 1px 1px; }
 	ul.nice.contained.tabs-content>li { border-color: #eee; }
 	
 
@@ -175,18 +174,18 @@
    	Nav Bar with Dropdowns
 	-------------------------------------------------- */
 	
-	.nav-bar { height: 3em; background: @navbackground; background-image: linear-gradient(top, rgb(151, 249, 224), rgb(222, 104, 80)); filter: ~"progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#97f9e0', EndColorStr='#de6850')"; margin-top: 1.3em; border: 1px solid #ddd; }	
-	.nav-bar>li { float: left; display: block; position: relative; padding: 0; margin: 0; border-right: 1px solid #ddd; line-height: 3em; }
+	.nav-bar { height: 2.5em; background: @navbackground;  margin-top: 1.3em; border: 1px solid lighten(@maintextcolor, 75%); }	
+	.nav-bar>li { float: left; display: block; position: relative; padding: 0; margin: 0; border-right: 1px solid lighten(@maintextcolor, 75%); line-height: 2.5em; }
 	.nav-bar>li>a { position: relative; font-size: 1em; padding: 0 20px; display: block; text-decoration: none; }
 	.nav-bar>li>input { margin: 0 16px; }
 	.nav-bar>li ul { margin-bottom: 0; }
-	.nav-bar>li li { line-height: 1.3; }
+	.nav-bar>li li { line-height: 1.3em; }
 	.nav-bar>li.has-flyout>a { padding-right: 36px; }
 	.nav-bar>li.has-flyout>a:after { content: ""; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid @linkcolor; display: block; position: absolute; right: 18px; bottom: 20px; }
-	.nav-bar>li:hover>a { color: #141414; z-index: 2; }
-	.nav-bar>li:hover>a:after { border-top-color: #141414; }
+	.nav-bar>li:hover>a { color: darken(@maintextcolor, 25%); z-index: 2; }
+	.nav-bar>li:hover>a:after { border-top-color: darken(@maintextcolor, 25%); }
 
-	.flyout { background: #fff; margin: 0; padding: 20px; border: 1px solid #ddd; position: absolute; top: 45px; left: -1px; width: 400px; z-index: 10; }
+	.flyout { background: darken(@backgroundcolor, 25%); margin: 0; padding: 20px; border: 1px solid lighten(@maintextcolor, 75%); position: absolute; top: 45px; left: -1px; width: 400px; z-index: 10; }
 	.flyout.small { width: 200px; }
 	.flyout.large { width: 600px; }
 	.flyout.right { left: auto; right: 0; }
@@ -200,7 +199,7 @@
 	@media only screen and (max-width: 767px) {
 		.nav-bar { height: auto; }
 		.nav-bar>li { float: none; display: block; border-right: none; }
-		.nav-bar>li>a { text-align: left; border-top: 1px solid red; border-right: none; } 
+		.nav-bar>li>a { text-align: left; border-top: 1px solid lighten(@maintextcolor, 75%); border-right: none; } 
 		.nav-bar>li:first-child>a { border-top: none; }
 		.nav-bar>li.has-flyout>a:after { content: ""; width: 0; height: 0; border-left: 4px solid transparent;border-right: 4px solid transparent; border-top: 4px solid @linkcolor; display: block; }
 		.nav-bar>li:hover>a { font-weight: bold; }
@@ -209,5 +208,5 @@
 		.flyout { position: relative; width: auto; top: auto; margin-right: -2px; border-width: 1px 1px 0px 1px; }
 		.flyout.right { float: none; right: auto; left: -1px; }
 		.flyout.small, .flyout.large { width: auto; }
-		.flyout p:last-child { margin-bottom: 18px; }
+		.flyout p:last-child { margin-bottom: 1em; }
 	}
