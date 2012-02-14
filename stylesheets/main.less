@@ -184,6 +184,7 @@
 	.nav-bar>li.has-flyout>a:after { content: ""; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid @linkcolor; display: block; position: absolute; right: 18px; bottom: 20px; }
 	.nav-bar>li:hover>a { color: darken(@maintextcolor, 25%); z-index: 2; }
 	.nav-bar>li:hover>a:after { border-top-color: darken(@maintextcolor, 25%); }
+	.nav-bar li.current_page_item a, .nav-bar li.current-menu-item a, .nav-bar li.current-menu-parent a, .nav-bar li.current-post-ancestor a { color: darken(@maintextcolor, 25%);} 
 
 	.flyout { background: darken(@backgroundcolor, 25%); margin: 0; padding: 20px; border: 1px solid lighten(@maintextcolor, 75%); position: absolute; top: 45px; left: -1px; width: 400px; z-index: 10; }
 	.flyout.small { width: 200px; }
