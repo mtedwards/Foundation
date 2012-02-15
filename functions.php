@@ -308,5 +308,4 @@ function emm_paginate_loop($start, $max, $page = 0) {
 wp_enqueue_script('jquery');
 wp_enqueue_script('modernizr', get_template_directory_uri() . '/javascripts/modernizr.js', 'jquery', false);
 wp_enqueue_script('reveal', get_template_directory_uri() . '/javascripts/jquery.reveal.js', 'jquery', false);
-wp_enqueue_script('fitvids', get_template_directory_uri() . '/javascripts/fitvids.js', 'jquery', false);
 ?>
