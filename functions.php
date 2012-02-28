@@ -151,16 +151,16 @@ function SliderContent(){
 		
 			if(has_post_thumbnail()) {
 			
-				the_post_thumbnail();
+				return get_the_post_thumbnail();
 				
 			} else {
 			
-				echo '<div class="content" style="background:#FFF;">';
+				return '<div class="content" style="background:#FFF;">' .
 			
-					the_title();
-					the_content();
+					get_the_title() . 
+					get_the_content() . 
 					
-				echo '</div>';
+				'</div>';
 			
 			}
 		
@@ -168,6 +168,11 @@ function SliderContent(){
 		
 }
 
+// [SliderContent]
+function SliderContent_func( $atts ){
+	return SliderContent();
+}
+add_shortcode( 'SliderContent', 'SliderContent_func' );
 
 
 // Custom Pagination
