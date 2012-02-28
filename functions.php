@@ -7,6 +7,13 @@ function remove_generators() {
 
 add_filter('the_generator','remove_generators');
 
+// Add localization
+add_action('after_setup_theme', 'localization_setup');
+function localization_setup(){
+    load_theme_textdomain('Foundation', get_template_directory() . '/languages');
+}
+
+
 // Add thumbnail support
 
 add_theme_support( 'post-thumbnails' );
@@ -146,27 +153,33 @@ function SliderContent(){
 
 	$args = array( 'post_type' => 'Orbit');
 	$loop = new WP_Query( $args );
-	
+
 		while ( $loop->have_posts() ) : $loop->the_post();
-		
+
 			if(has_post_thumbnail()) {
-			
-				the_post_thumbnail();
-				
+
+				return get_the_post_thumbnail();
+
 			} else {
-			
-				echo '<div class="content" style="background:#FFF;">';
-			
-					the_title();
-					the_content();
-					
-				echo '</div>';
-			
+
+				return '<div class="content" style="background:#FFF;">' .
+
+					get_the_title() . 
+					get_the_content() . 
+
+				'</div>';
+
 			}
-		
+
 		endwhile;
-		
+
 }
+
+// [SliderContent]
+function SliderContent_func( $atts ){
+	return SliderContent();
+}
+add_shortcode( 'SliderContent', 'SliderContent_func' );
 
 
 
