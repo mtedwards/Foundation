@@ -16,9 +16,6 @@
 				<div class="six columns">
 					<p>&#169; Copyright <?php the_date('Y'); ?> <?php bloginfo('name') ?></p>
 				</div>
-				<div class="six columns">
-					<p class="right">Website By: <a href="http://www.emptyhead.com.au">Emptyhead</a></p>
-				</div>
 			</div>
 	</footer>
 	<!-- Footer -->
