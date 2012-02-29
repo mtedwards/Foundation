@@ -149,6 +149,21 @@ function Orbit(){
 		register_post_type('Orbit', $Orbit_args);
 }
 
+// This adds css to the header file to give the custom post types icons.
+// By Ethanhackett - https://github.com/drewsymo/Foundation/issues/31
+add_action( 'admin_head', 'cpt_icons' );
+function cpt_icons() {
+    ?>
+    <style type="text/css" media="screen">
+        #menu-posts-orbit .wp-menu-image {
+            background: url(<?php bloginfo('template_url') ?>/images/orbit.png) no-repeat 6px -17px !important;
+        }
+        #menu-posts-orbit:hover .wp-menu-image, #menu-posts-POSTTYPE.wp-has-current-submenu .wp-menu-image {
+            background-position:6px 7px!important;
+        }
+    </style>
+<?php }
+
 function SliderContent(){
 
 	$args = array( 'post_type' => 'Orbit');
